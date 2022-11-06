@@ -54,6 +54,6 @@ public class CompareTest {
         Assertions.assertEquals(11, result.getDifferencesCount( true ));
         Assertions.assertEquals(3, comparisonParameters.getFirstPageCount());
         Assertions.assertEquals(3, comparisonParameters.getSecondPageCount());
-        result.getDifferences(true).get(0);
+        result.getDifferences(true).get(1);
     }
 }
