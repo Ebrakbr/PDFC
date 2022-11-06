@@ -6,6 +6,7 @@ import com.inet.pdfc.PDFComparer;
 import com.inet.pdfc.config.XMLProfile;
 import com.inet.pdfc.error.PdfcException;
 import com.inet.pdfc.generator.message.InfoData;
+import com.inet.pdfc.generator.model.DiffGroup;
 import com.inet.pdfc.results.ResultModel;
 import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
@@ -50,10 +51,30 @@ public class CompareTest {
         ResultModel result = new PDFComparer().setProfile( new XMLProfile(profil) ).compare( example1, example2 );
         InfoData comparisonParameters = result.getComparisonParameters();
 
-        Assertions.assertEquals(11, result.getDifferencesCount( false ));
-        Assertions.assertEquals(11, result.getDifferencesCount( true ));
-        Assertions.assertEquals(3, comparisonParameters.getFirstPageCount());
-        Assertions.assertEquals(3, comparisonParameters.getSecondPageCount());
+//        Assertions.assertEquals(11, result.getDifferencesCount( false ));
+//        Assertions.assertEquals(11, result.getDifferencesCount( true ));
+//        Assertions.assertEquals(3, comparisonParameters.getFirstPageCount());
+//        Assertions.assertEquals(3, comparisonParameters.getSecondPageCount());
         result.getDifferences(true).get(1);
+
+        for (int i=0 ; i< result.getDifferences(true).size(); i++){
+            DiffGroup diff =  result.getDifferences(true).get(i);
+
+            System.out.println("\n\n");
+            System.out.println("page number = "+(diff.getAddedElements().get(0).getPageIndex()+1));
+            System.out.println("difference type= "+diff.getType());
+            System.out.println("difference explenation = "+diff.toString());
+            System.out.println("\n");
+
+            if (!diff.getModifications().isEmpty()){
+                for (var mod:diff.getModifications()){
+
+
+                    System.out.println("Detail Info= "+mod.getMessage());
+
+                }
+            }
+
+        }
     }
 }
