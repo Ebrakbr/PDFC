@@ -1,0 +1,1 @@
+ * New option for any type of PDF export to not replace external font references by default fonts. This keeps the export more alike similar to the original files even though font references are discoured for PDF. 

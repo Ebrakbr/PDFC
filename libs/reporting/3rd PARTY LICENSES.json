@@ -1,0 +1,27 @@
+{
+    "jcommon.jar": {
+        "licenses": [
+            {
+                "name": "LGPL 3.0",
+                "file": "gnu-lesser-general-public-licence.txt",
+                "url": "http://www.gnu.org/licenses/lgpl.txt"
+            }
+        ],
+        "file": "org.jfree:jcommon:1.0.23@jar",
+        "description": "\n    JCommon is a free general purpose Java class library that is used in\n    several projects at www.jfree.org, including JFreeChart and\n    JFreeReport.\n    ",
+        "title": "JCommon",
+        "version": "1.0.23",
+        "url": "http://www.jfree.org/jcommon/"
+    },
+    "jfreechartCC.jar": {
+        "licenses": [
+            {
+                "name": "license-jfreechartCC",
+                "file": "license-jfreechartcc.txt"
+            }
+        ],
+        "file": "reporting:jfreechartCC",
+        "title": "jfreechartCC",
+        "version": "22.4.265"
+    }
+}

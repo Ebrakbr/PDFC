@@ -1,0 +1,9 @@
+  * Set a custom product title for external representation
+  * Add WebAPI ''/api/reporting/report/render'' endpoint to render reports using Token Authentication
+  * Continuous Numeric Category Axis can now also be set to logarithmic
+  * Use the correct database row for inlined fields in crosstab labels such as the total labels
+  * Support for exporting CSV files larger 2 GB added (format csv and data)
+  * Add support for stored procedures for PostgreSQL
+  * Fixed the loss of datasources after a BackingStoreException in Preferences.sync().
+  * Fix gray background when printing from HTML viewer
+  * Prevents a NullPointerException on the console when logging is disabled.

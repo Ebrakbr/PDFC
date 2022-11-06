@@ -1,0 +1,9 @@
+﻿[Config,STATUS,11/6 16:54:24,#00002] Initializing persistence in folder C:\ProgramData\i-net software\pdfc_User_i-net PDFC
+[Config,STATUS,11/6 16:57:16,#00002] Initializing persistence in folder C:\ProgramData\i-net software\pdfc_User_i-net PDFC
+[Config,STATUS,11/6 16:59:29,#00002] Initializing persistence in folder C:\ProgramData\i-net software\pdfc_User_i-net PDFC
+[Config,STATUS,11/6 17:08:34,#00002] Initializing persistence in folder C:\ProgramData\i-net software\pdfc_User_i-net PDFC
+[Config,STATUS,11/6 17:12:29,#00002] Initializing persistence in folder C:\ProgramData\i-net software\pdfc_User_i-net PDFC
+[Config,STATUS,11/6 17:13:39,#00001] Setting current configuration to: User/i-net PDFC
+[Config,STATUS,11/6 17:13:39,#00002] Initializing persistence in folder C:\ProgramData\i-net software\pdfc_User_i-net PDFC
+[Config,STATUS,11/6 20:37:12,#00002] Initializing persistence in folder C:\ProgramData\i-net software\pdfc_User_i-net PDFC
+[Config,STATUS,11/6 20:37:37,#00002] Initializing persistence in folder C:\ProgramData\i-net software\pdfc_User_i-net PDFC

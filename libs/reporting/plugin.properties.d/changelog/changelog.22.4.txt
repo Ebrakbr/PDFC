@@ -1,0 +1,6 @@
+ * Font replacement improved for 'HTML advanced' formatted text. The replacement now works on character-level, just like in other text types.
+ * TotalPageCount should now be evaluable in a trigger function.
+- Improvment of continuous charts
+  - added support for markers
+  - consider line style "None" to only show markers
+  - added support for combining of continuous charts with XY charts

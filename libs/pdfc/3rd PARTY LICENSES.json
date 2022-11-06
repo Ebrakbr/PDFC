@@ -1,0 +1,30 @@
+{
+    "icu4j.jar": {
+        "licenses": [
+            {
+                "name": "Unicode/ICU License",
+                "file": "unicode-icu-license.txt",
+                "url": "https://raw.githubusercontent.com/unicode-org/icu/main/icu4c/LICENSE"
+            }
+        ],
+        "file": "com.ibm.icu:icu4j:70.1@jar",
+        "description": "\n    International Component for Unicode for Java (ICU4J) is a mature, widely used Java library\n    providing Unicode and Globalization support \n  ",
+        "title": "ICU4J",
+        "version": "70.1",
+        "url": "https://icu.unicode.org/"
+    },
+    "jbig2.jar": {
+        "licenses": [
+            {
+                "name": "BSD 3",
+                "file": "license-bsd-3.txt",
+                "url": "http://www.opensource.org/licenses/BSD-3-Clause"
+            }
+        ],
+        "file": "de.intarsys.opensource:jbig2:5.5.1",
+        "description": "This implementation uses the JBIG2 decoder provider by IDRsolutions (jPedal).",
+        "title": "jbig2",
+        "version": "5.5.1",
+        "url": "http://opensource.intarsys.de/home/en/index.php?n=JPodRenderer.HomePage"
+    }
+}

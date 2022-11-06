@@ -1,0 +1,3 @@
+* Whitespace calculation for small fonts improved
+* Footer position corrected in case the header is missing.
+* A font difference will now be detected in case the design font name is the same, but the actually used font differs due to a missing embedded font

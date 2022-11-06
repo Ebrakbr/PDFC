@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="FILTERS">INVISIBLEELEMENTS,TEXTTRANSFORM,SOLVEFALSEREPLACE,OCR,REGEXP,BASELINETABLE</entry>
+<entry key="TABLE_HEADER_DIFF_RATIO">0.0</entry>
+<entry key="COMPARE_TYPES">TEXT</entry>
+<entry key="TEXT_ALIGN_RATIO">0.20400000000000001</entry>
+<entry key="TRANSFORM_OPERATIONS">REPLACE_IDENTICAL</entry>
+<entry key="TOLERANCE_PAGE_LEFTCORNER">3</entry>
+<entry key="FILTER_PATTERNS">(?&lt;!\w)e(?!\w)|regexp|active
+¢|text|active</entry>
+<entry key="FIXED_FOOTER_SIZE">100</entry>
+<entry key="TOLERANCE_TEXT_LOCATION">-1</entry>
+<entry key="SCAN_OTF_DIRECTORIES">false</entry>
+<entry key="TOLERANCE_UNDERLINE_LENGTH">0.1</entry>
+<entry key="TOLERANCE_IMAGE_PIXEL_VALUE">0.1</entry>
+<entry key="NORMALIZATION_LEVEL">2</entry>
+<entry key="COMPARE_TEXT_CASE_SENSITIVE">true</entry>
+<entry key="TOLERANCE_LINE_POSITION">4</entry>
+<entry key="CONTINUOUS_DETECT_PAGES">5</entry>
+<entry key="IMAGE_CHANGE_AREA">false</entry>
+<entry key="COMPARE_LINE_STYLES">true</entry>
+<entry key="TOLERANCE_TEXT_SIZE">0.05</entry>
+<entry key="TOLERANCE_IMAGE_SIZE">0.1</entry>
+<entry key="TOLERANCE_COLOR">0.01</entry>
+<entry key="TOLERANCE_LINE_THICKNESS">0</entry>
+<entry key="IGNORE_REPEATING_HEADER">true</entry>
+<entry key="TOLERANCE_BOX_ROUND_EDGES">3</entry>
+<entry key="USE_PIXEL_MEDIUM_VALUE">true</entry>
+<entry key="TOLERANCE_PAGE_RATIO">0.01</entry>
+<entry key="FIXED_HEADER_SIZE">2</entry>
+<entry key="TOLERANCE_LINE_STYLE">false</entry>
+<entry key="TOLERANCE_IMAGE_DISTANCE">1</entry>
+<entry key="TOLERANCE_PAGE_SIZE">2</entry>
+<entry key="PROFIL_DESCRIPTION"></entry>
+<entry key="TOLERANCE_LINE_SIZE">2</entry>
+<entry key="PROFIL_NAME">OCR Profile Customize</entry>
+<entry key="OTF_DIRECTORIES"></entry>
+<entry key="CONTINUOUS_COMPARE">CONTINUOUS</entry>
+<entry key="COMPARE_TEXT_STYLES"></entry>
+<entry key="PAGERANGE_DOCUMENT1"></entry>
+<entry key="DOCUMENT_LANGUAGE">auto-detect</entry>
+<entry key="PAGERANGE_DOCUMENT2"></entry>
+</properties>

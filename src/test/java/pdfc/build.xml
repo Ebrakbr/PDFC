@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- =================================
+
+     This is a sample ant script that uses the CompareTwoFoldersAsUnitTest class from the PDFC samples to 
+     compare the PDF files in two different folders as a JUnit test.
+    
+     The folders must be specified via the system properties 'source_dir' and 'reference_dir'. 
+     This can be obtained by using the -D Java parameter ( -Dsource_dir=... -Dreference_dir=... ).
+    
+     Furthermore the 'libraries_dir' system property should point to a directory
+     containing all necessary libraries for executing the CompareTwoFoldersAsUnitTest class. 
+     If the 'libraries_dir' property is not set, this ant script will use the current base directory as the 
+     library path.
+    
+     The following steps are required to run this build file
+        * create a folder called 'libs' and copy  all libraries of the 'java' folder of the SDK into this folder 
+        * find the files pdfc.zip and reporting.zip in the plugins folder of the SDK and extract thes files into the local 'libs' folder        
+        * copy a JUnit library into the 'libs' folder
+        * compile the CompareTwoFoldersAsUnitTest sample class, create a jar-file for this class and copy this jar file into the 'libs' folder
+        * create a folder called 'plugins' and copy at least the plugin files `plugins/parser.*.zip` and `plugins/filter.*.zip`into  this folder
+          (for OCR the files `plugins/ocr.*.zip` are needed as well)
+        
+     ================================= -->
+
+<project basedir="." default="compare">
+
+    <property environment="env"/>
+
+    <!-- set the 'libraries_dir' property -->
+    <condition property="libraries_dir" value="env.libraries_dir" else="libs">
+        <isset property="env.libraries_dir" />
+    </condition>
+    
+    <path id="classpath">
+        <fileset dir="${libraries_dir}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+            
+    <!-- ================================= 
+          
+          Executes the CompareTwoFoldersAsUnitTest class as a JUnit test and saves the results
+          in the 'junit-reports' directory.
+          
+         ================================= -->
+    <target name="compare" description="description">
+        <mkdir dir="junit-reports"/>
+        <property name="prop.classpath" refid="classpath"/>
+        <echo>current directory: ${prop.classpath}</echo>
+        <junit fork="true" printsummary="false" showoutput="false">
+            <classpath refid="classpath" />
+            <formatter type="xml" />
+            <sysproperty key="currentFolder" value="${source_dir}" />
+            <sysproperty key="referenceFolder" value="${reference_dir}" />
+            <test name="pdfc.CompareTwoFoldersAsUnitTest" todir="junit-reports" />
+        </junit>
+
+        <!-- Optional to generate HTML report files as well: -->
+        <!--<junitreport todir="junit-reports">
+            <fileset dir="junit-reports">
+                <include name="TEST-*.xml" />
+            </fileset>
+            <report todir="junit-reports" />
+        </junitreport>-->
+    </target>
+
+</project>

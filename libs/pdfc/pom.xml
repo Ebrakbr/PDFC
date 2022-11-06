@@ -1,0 +1,4 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"><modelVersion>4.0.0</modelVersion><groupId>com.inet</groupId><artifactId>pdfc</artifactId><version>22.4</version><dependencies>
+<dependency><groupId>com.ibm.icu</groupId><artifactId>icu4j</artifactId><version>70.1</version><type>jar</type></dependency>
+<dependency><groupId>de.intarsys.opensource</groupId><artifactId>jbig2</artifactId><version>5.5.1</version><type>jar</type></dependency>
+</dependencies></project>

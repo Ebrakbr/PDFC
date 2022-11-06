@@ -1,0 +1,20 @@
+<svg width="48" height="48" version="1.1" viewBox="0 0 12.7 12.7" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(0 -284.3)">
+  <g transform="matrix(.09071 0 0 .09071 -45.36 256)">
+   <rect x="500" y="312.4" width="140" height="140" fill="none" opacity=".5"/>
+   <g transform="matrix(.75 0 0 .75 870 1783)" stroke-width="1.401">
+    <g transform="matrix(2.059 0 0 2.059 812.7 -629)" stroke-width="1.401">
+     <g transform="translate(-579.5 -1017)" fill="#859ccf">
+      <path d="m24.47 384.1-65 65h34l31-31z" fill="#859ccf"/>
+     </g>
+     <g transform="rotate(180 -300.3 -94.26)" fill="#cdd6ef">
+      <path d="m22.47 382.1-65 65h34l31-31z" fill="#cdd6ef"/>
+     </g>
+     <g transform="translate(-539.5 -1017)" fill="#647db6">
+      <path d="m-15.53 424.1-25 25h25z" fill="#647db6"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

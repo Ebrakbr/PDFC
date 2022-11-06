@@ -1,0 +1,165 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation files('libs/pdfc/pdfc.jar')
+    implementation files('libs/pdfc/icu4j.jar')
+    implementation files('libs/pdfc/jbig2.jar')
+    implementation files('libs/pdfc/pdfc-javadoc.jar')
+    implementation files('libs/reporting/jcommon.jar')
+    implementation files('libs/reporting/jfreechartCC.jar')
+    implementation files('libs/reporting/reporting.jar')
+    implementation files('libs/reporting/reporting-javadoc.jar')
+    implementation files('libs/reporting/ReportViewer.jar')
+    implementation files('libs/inetcore.jar')
+    implementation files('libs/junit.jar/junit.jar')
+    implementation files('libs/log4j-core-2.0.2.jar')
+    implementation files('libs/log4j-api-2.0.1.jar')
+    implementation files('libs/analytics.jar')
+
+}
+if (!file('libs/inetcore.jar').exists() || !file('plugins/parser.pdf.zip').exists()) {
+    ant.fail('Please first download the i-net PDFC SDK at https://download.inetsoftware.de/pdfc-sdk-latest.zip and place:\n'+
+            ' - all i-net PDFC/plugins/parser.*.zip into the plugins subfolder\n'+
+            ' - all i-net PDFC/plugins/filter.*.zip into the plugins subfolder\n'+
+            ' - i-net PDFC/java/inetcore.jar into the libs subfolder\n' +
+            ' - extract the contents of the plugin i-net PDFC/plugins/pdfc.zip into the libs subfolder\n' +
+            ' - extract the contents of the plugin i-net PDFC/plugins/reporting.zip into the libs subfolder\n' +
+            'If OCR is to be used, please:\n' +
+            ' - copy all i-net PDFC/plugins/ocr.*.zip into the plugins subfolder\n'+
+            ' - copy the directory `i-net PDFC/lang` into the project folder'
+    )
+}
+
+task runOutputSpecifyModifyTypesSample(type:JavaExec) {
+    description 'Runs sample OutputSpecifyModifyTypes'
+    dependsOn 'build'
+    main 'configuration.OutputSpecifyModifyTypes'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runUseRegex(type:JavaExec) {
+    description 'Runs sample UseRegex'
+    dependsOn 'build'
+    main = 'configuration.UseRegex'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runUseXMLConfiguration(type:JavaExec) {
+    description 'Runs sample UseXMLConfiguration'
+    dependsOn 'build'
+    main = 'configuration.UseXMLConfiguration'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf"), file( "${sourceSets.main.output.resourcesDir}/Profile_Custom_OCR.xml" )
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runSimpleConsole(type:JavaExec) {
+    description 'Runs sample SimpleConsole'
+    dependsOn 'build'
+    main = 'console.SimpleConsole'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runNumOfDifferencePageNumber(type:JavaExec) {
+    description 'Runs sample NumOfDifferencePageNumber'
+    dependsOn 'build'
+    main = 'differences.NumOfDifferencePageNumber'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runNumOfDifferencePerPage(type:JavaExec) {
+    description 'Runs sample NumOfDifferencePerPage'
+    dependsOn 'build'
+    main = 'differences.NumOfDifferencePerPage'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runNumOfDifferences(type:JavaExec) {
+    description 'Runs sample NumOfDifferences'
+    dependsOn 'build'
+    main = 'differences.NumOfDifferences'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runCompareAndExportToSpecificFilename(type:JavaExec) {
+    description 'Runs sample CompareAndExportToSpecificFilename'
+    dependsOn 'build'
+    main = 'export.CompareAndExportToSpecificFilename'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf"), file('output.pdf')
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runSimpleCompareAndExport(type:JavaExec) {
+    description 'Runs sample SimpleCompareAndExport'
+    dependsOn 'build'
+    main = 'export.SimpleCompareAndExport'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runHotFolderService(type:JavaExec) {
+    description 'Runs continuous service to watch a hot folder; does not terminate automatically'
+    dependsOn 'build'
+    main = 'hotfolder.HotFolderService'
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runPDFAnalysis(type:JavaExec) {
+    description 'Runs sample PDFAnalysis'
+    dependsOn 'build'
+    main = 'parser.PDFAnalysis'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runCompareAndPrintWithPrintsetting(type:JavaExec) {
+    description 'Runs sample CompareAndPrintWithPrintsetting'
+    dependsOn 'build'
+    main = 'print.CompareAndPrintWithPrintsetting'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runSimpleCompareAndPrint(type:JavaExec) {
+    description 'Runs sample SimpleCompareAndPrint'
+    dependsOn 'build'
+    main = 'print.SimpleCompareAndPrint'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runRender(type:JavaExec) {
+    description 'Runs sample Render'
+    dependsOn 'build'
+    main = 'render.Render'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf")
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+task runReportingToSpecificFilename(type:JavaExec) {
+    description 'Runs sample ReportingToSpecificFilename'
+    dependsOn 'build'
+    main = 'report.ReportingToSpecificFilename'
+    args file("${sourceSets.main.output.resourcesDir}/Example1.pdf"), file("${sourceSets.main.output.resourcesDir}/Example2.pdf"), file('output.pdf')
+    classpath = files(sourceSets.main.runtimeClasspath, sourceSets.main.output.resourcesDir)
+}
+
+test {
+    useJUnitPlatform()
+}
